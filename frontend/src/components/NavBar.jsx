@@ -51,6 +51,7 @@ const NavBar = () => {
             src={assets?.logo}
             alt="Prescripto"
             className="w-36 cursor-pointer"
+            onClick={() => navigate("/")}
           />
 
           {isMobile ? (
@@ -115,7 +116,7 @@ const NavBar = () => {
             </div>
           ) : (
             <button
-              className="hover:bg-primary-dark rounded-full bg-primary px-6 py-2 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              className="rounded-full bg-primary px-6 py-2 text-sm font-medium text-white hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               onClick={() => navigate("/login")}
             >
               Create Account
