@@ -15,3 +15,7 @@
 .nav-link.active::after {
     @apply w-full;
 }
+
+::-webkit-scrollbar {
+    @apply hidden;
+}
