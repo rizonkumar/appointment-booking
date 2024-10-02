@@ -1,34 +1,38 @@
 import { assets } from "../assets/assets.js";
 import { useNavigate } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 
 const Banner = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="my-20 flex rounded-lg bg-primary-dark px-6 sm:px-10 md:mx-10 md:px-14 lg:px-12">
-      {/* Left Side Section  */}
-      <div className="flex-1 py-8 sm:py-10 md:py-16 lg:py-24 lg:pl-5">
-        <div className="text-xl font-semibold text-white sm:text-2xl md:text-3xl lg:text-5xl">
-          <p>Book Appointment</p>
-          <p className="mt-4">With 100+ Trusted Doctors</p>
+    <div className="my-10 overflow-hidden rounded-2xl bg-primary-dark px-6 py-12 sm:my-20 sm:px-10 md:mx-10 lg:px-12">
+      <div className="flex flex-col-reverse items-center md:flex-row md:justify-between">
+        {/* Left Side Section  */}
+        <div className="mt-8 flex flex-1 flex-col items-center text-center md:mt-0 md:items-start md:text-left">
+          <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+            Book Appointment
+            <br className="hidden sm:inline" /> With 100+ Trusted Doctors
+          </h1>
+          <button
+            onClick={() => {
+              navigate("/login");
+              scrollTo(0, 0);
+            }}
+            className="mt-8 flex items-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-primary-dark transition-all hover:bg-opacity-90 hover:scale-105 sm:text-base"
+          >
+            Create Account
+            <FaArrowRight className="ml-2" />
+          </button>
         </div>
-        <button
-          onClick={() => {
-            navigate("/login");
-            scrollTo(0, 0);
-          }}
-          className="mt-6 rounded-full bg-white px-8 py-3 text-sm text-gray-600 transition-all hover:scale-105 sm:text-base"
-        >
-          Create Account
-        </button>
-      </div>
-      {/* Right Side Section  */}
-      <div className="relative hidden md:block md:w-1/2 lg:w-[370px]">
-        <img
-          src={assets.appointment_img}
-          alt="appointment"
-          className="absolute bottom-0 right-0 w-full max-w-md"
-        />
+        {/* Right Side Section  */}
+        <div className="relative w-full max-w-sm md:w-1/2 lg:w-[370px]">
+          <img
+            src={assets.appointment_img}
+            alt="Trusted doctor"
+            className="w-full object-cover"
+          />
+        </div>
       </div>
     </div>
   );
