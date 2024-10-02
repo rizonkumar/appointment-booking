@@ -1,13 +1,13 @@
 import { assets } from "../assets/assets.js";
-import { FaSearch, FaCalendarAlt, FaUserMd } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { FaSearch, FaCalendarAlt, FaUserMd } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Header = () => {
   return (
     <div className="overflow-hidden rounded-lg bg-gradient-to-r from-blue-600 to-indigo-700 px-6 py-12 md:px-10 lg:px-20">
       <div className="flex flex-col items-center md:flex-row md:justify-between">
         {/* Left Side Section */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -26,14 +26,14 @@ const Header = () => {
           </div>
           <a
             href="#speciality"
-            className="mt-8 flex items-center rounded-full bg-white px-8 py-3 text-lg font-semibold text-indigo-600 transition-all duration-300 hover:bg-indigo-100 hover:scale-105"
+            className="mt-8 flex items-center rounded-full bg-white px-8 py-3 text-lg font-semibold text-indigo-600 transition-all duration-300 hover:scale-105 hover:bg-indigo-100"
           >
             Book Appointment
             <FaCalendarAlt className="ml-2" />
           </a>
         </motion.div>
         {/* Right Side Section */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}

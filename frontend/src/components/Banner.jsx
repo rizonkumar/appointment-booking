@@ -19,7 +19,7 @@ const Banner = () => {
               navigate("/login");
               scrollTo(0, 0);
             }}
-            className="mt-8 flex items-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-primary-dark transition-all hover:bg-opacity-90 hover:scale-105 sm:text-base"
+            className="mt-8 flex items-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-primary-dark transition-all hover:scale-105 hover:bg-opacity-90 sm:text-base"
           >
             Create Account
             <FaArrowRight className="ml-2" />

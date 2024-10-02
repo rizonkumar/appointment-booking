@@ -67,7 +67,7 @@ const About = () => {
 };
 
 const FeatureCard = ({ icon, title, description }) => (
-  <div className="rounded-lg bg-white p-6 text-center shadow-md transition-shadow duration-300 hover:shadow-xl">
+  <div className="flex flex-col items-center rounded-lg bg-white p-6 text-center shadow-md transition-shadow duration-300 hover:shadow-xl">
     {icon}
     <h3 className="mb-3 font-heading text-xl font-semibold">{title}</h3>
     <p className="text-gray-600">{description}</p>
