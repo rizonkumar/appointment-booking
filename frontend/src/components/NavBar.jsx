@@ -72,7 +72,7 @@ const NavBar = () => {
               <NavLink to="/about" className="nav-link">
                 <AiOutlineInfoCircle className="mr-1 inline-block" /> About
               </NavLink>
-              <NavLink to="/contact-us" className="nav-link">
+              <NavLink to="/contact" className="nav-link">
                 <AiOutlinePhone className="mr-1 inline-block" /> Contact
               </NavLink>
             </ul>
@@ -148,7 +148,7 @@ const NavBar = () => {
               <AiOutlineInfoCircle className="mr-2 inline-block" /> About
             </NavLink>
             <NavLink
-              to="/contact-us"
+              to="/contact"
               className="block py-2 text-sm hover:text-primary"
               onClick={toggleMenu}
             >
