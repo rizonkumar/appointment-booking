@@ -1,12 +1,22 @@
-import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../context/AppContext.jsx";
-import { FaUserMd, FaCheckCircle, FaChevronRight } from "react-icons/fa";
+import { FaCheckCircle, FaChevronRight, FaUserMd } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const TopDoctors = () => {
-  const navigate = useNavigate();
+const RelatedDoctors = ({ docId, speciality }) => {
   const { doctors } = useContext(AppContext);
+  const navigate = useNavigate();
+  const [relDoc, setRelDoc] = useState([]);
+
+  useEffect(() => {
+    if (doctors.length > 0 && speciality) {
+      const doctorsData = doctors.filter(
+        (doc) => doc.speciality === speciality && doc._id !== docId,
+      );
+      setRelDoc(doctorsData);
+    }
+  }, [doctors, speciality, docId]);
 
   return (
     <section className="px-4 py-16 sm:px-6 lg:px-8">
@@ -22,7 +32,7 @@ const TopDoctors = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {doctors.slice(0, 10).map((doctor, index) => (
+          {relDoc.slice(0, 5).map((doctor, index) => (
             <DoctorCard key={index} doctor={doctor} navigate={navigate} />
           ))}
         </div>
@@ -42,6 +52,11 @@ const TopDoctors = () => {
       </div>
     </section>
   );
+};
+
+RelatedDoctors.propTypes = {
+  docId: PropTypes.string.isRequired,
+  speciality: PropTypes.string.isRequired,
 };
 
 const DoctorCard = ({ doctor, navigate }) => (
@@ -79,12 +94,12 @@ const DoctorCard = ({ doctor, navigate }) => (
 DoctorCard.propTypes = {
   doctor: PropTypes.shape({
     _id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     speciality: PropTypes.string.isRequired,
     experience: PropTypes.string.isRequired,
   }).isRequired,
   navigate: PropTypes.func.isRequired,
 };
 
-export default TopDoctors;
+export default RelatedDoctors;
