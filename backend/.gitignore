@@ -1,0 +1,33 @@
+# Node.js specific
+node_modules/
+npm-debug.log
+
+# Environment variables
+.env
+.env.*
+
+# Testing
+coverage/
+test/
+
+# IDE-specific files
+.vscode/
+.idea/
+.DS_Store
+
+# Compiled assets
+dist/
+build/
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.swp
+*.bak
+*.tmp
+*.swx
+
+# Other
+.gitkeep
