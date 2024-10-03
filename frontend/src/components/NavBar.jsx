@@ -45,9 +45,12 @@ const NavBar = () => {
   };
 
   const NavLinks = ({ mobile, onClick }) => {
-    const linkClass = mobile
+    const linkBaseClass = mobile
       ? "block py-2 text-sm hover:text-primary transition-colors duration-200"
       : "nav-link";
+
+    const linkClass = ({ isActive }) =>
+      `${linkBaseClass} ${isActive ? "text-primary font-semibold" : "text-gray-600"}`;
 
     return (
       <>
@@ -113,7 +116,9 @@ const NavBar = () => {
   const SidebarLink = ({ to, icon: Icon, text, onClick }) => (
     <NavLink
       to={to}
-      className="flex items-center rounded px-4 py-2 text-sm text-gray-700 transition-colors duration-200 hover:bg-gray-100"
+      className={({ isActive }) =>
+        `flex items-center rounded px-4 py-2 text-sm transition-colors duration-200 ${isActive ? "bg-blue-50 font-semibold text-primary" : "text-gray-700 hover:bg-gray-100"}`
+      }
       onClick={onClick}
     >
       <Icon className="mr-2" /> {text}
