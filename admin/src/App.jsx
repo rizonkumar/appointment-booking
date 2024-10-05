@@ -20,7 +20,7 @@ function App() {
       <NavBar />
       <div className="flex">
         <Sidebar />
-        <main className="flex-1 p-6 sm:ml-64">
+        <main className="flex-1 p-6">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/admin-dashboard" element={<Dashboard />} />
