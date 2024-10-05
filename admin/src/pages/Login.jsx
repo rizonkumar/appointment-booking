@@ -6,8 +6,6 @@ import { AdminContext } from "../context/adminContext";
 import { data } from "autoprefixer";
 
 const Login = () => {
-  console.log("Login component rendered");
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [state, setState] = useState("Admin");

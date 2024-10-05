@@ -7,7 +7,6 @@ const AdminContextProvider = (props) => {
     localStorage.getItem("aToken") ? localStorage.getItem("aToken") : "",
   );
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
-  console.log("AdminContextProvider rendered, backendUrl:", backendUrl);
 
   const value = {
     aToken,
