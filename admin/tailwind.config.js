@@ -13,6 +13,10 @@ export default {
           DEFAULT: "#5f6FFF",
           dark: "#4F5FEF",
         },
+        secondary: {
+          DEFAULT: "#FF6B6B",
+          dark: "#FF5252",
+        },
       },
     },
   },
